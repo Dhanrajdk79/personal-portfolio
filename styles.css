@@ -1,0 +1,503 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    margin: 0;
+    padding: 15px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #f8fafc;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0f766e;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #115e59;
+    transform: translateY(-4px);
+}
+
+
+#home,
+#about,
+#projects,
+#Education,
+#Experience,
+#contact {
+    padding: 20px;
+    margin: 20px 10px;
+    text-align: center;
+    background-color: #e2e8f0;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#home {
+    background-color: #ccfbf1;
+    padding: 25px 20px;
+}
+
+#home h1 {
+    font-size: 38px;
+    margin: 10px 0;
+    color: #0f172a;
+}
+
+#home h3,
+#home h4 {
+    color: #134e4a;
+}
+
+#home p {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 10px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+#home a,
+#projects a,
+#contact a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0f766e;
+    padding: 9px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 1px solid #0f766e;
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
+}
+
+#home a:hover,
+#projects a:hover,
+#contact a:hover {
+    background-color: #115e59;
+    transform: translateY(-4px);
+}
+
+#about p {
+    max-width: 900px;
+    margin: 15px auto;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+#about b {
+    color: #0f766e;
+}
+
+
+#skills {
+    background-color: #dbeafe;
+    color: #1e293b;
+    padding: 20px;
+    margin: 20px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+}
+
+#skills h2,
+#projects h2,
+#Education h2,
+#Experience h2,
+#contact h2 {
+    text-align: center;
+    color: #0f172a;
+    margin-top: 0;
+}
+
+.skill-box {
+    background-color: #ffffff;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 18px 0;
+    min-width: 0;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-3px);
+    border-color: #0f766e;
+}
+
+.skill-box legend {
+    margin: 0 auto;
+    padding: 5px 16px;
+    background-color: #0f766e;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill-tags span {
+    background-color: #ccfbf1;
+    color: #115e59;
+    padding: 6px 12px;
+    border: 1px solid #99f6e4;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.skill-tags span:hover {
+    background-color: #99f6e4;
+}
+
+
+#projects h3 {
+    color: #0f766e;
+}
+
+#projects p {
+    line-height: 1.8;
+}
+
+
+#Education,
+#Experience {
+    background-color: #dbeafe;
+}
+
+#Education h3,
+#Experience h3 {
+    color: #0f766e;
+    margin-bottom: 5px;
+}
+
+#Education p,
+#Experience p {
+    margin: 5px 0;
+}
+
+#Education small,
+#Experience small {
+    color: #475569;
+    font-size: 14px;
+}
+
+#Education hr,
+#Experience hr {
+    border: 0;
+    border-top: 1px solid #cbd5e1;
+    margin: 18px 0;
+}
+
+
+#contact {
+    background-color: #ccfbf1;
+}
+
+#contact p {
+    margin: 12px 0;
+}
+
+#contact form a {
+    margin: 0;
+}
+
+
+form {
+    width: 90%;
+    max-width: 450px;
+    margin: 25px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    text-align: left;
+}
+
+form fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+form legend {
+    color: #0f766e;
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+form label {
+    font-weight: 600;
+    color: #334155;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #1e293b;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 2px solid #5eead4;
+    border-color: #0f766e;
+}
+
+form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+form button {
+    padding: 11px 16px;
+    background-color: #0f766e;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #115e59;
+    transform: translateY(-2px);
+}
+
+
+hr {
+    border: 0;
+    border-top: 1px solid #cbd5e1;
+    margin: 25px 5px;
+}
+
+body.dark-mode #home {
+    background-color: #134e4a;
+    color: #f8fafc;
+}
+
+body.dark-mode #home h1,
+body.dark-mode #home h3,
+body.dark-mode #home h4,
+body.dark-mode #home p {
+    color: #ffffff;
+}
+
+body.dark-mode #about,
+body.dark-mode #projects {
+    background-color: #27272a;
+    color: #f8fafc;
+}
+
+body.dark-mode #about h2,
+body.dark-mode #about p,
+body.dark-mode #projects h2,
+body.dark-mode #projects p {
+    color: #f8fafc;
+}
+
+body.dark-mode #about b {
+    color: #5eead4;
+}
+
+body.dark-mode #skills,
+body.dark-mode #Education,
+body.dark-mode #Experience {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+body.dark-mode #skills h2,
+body.dark-mode #Education h2,
+body.dark-mode #Experience h2 {
+    color: #5eead4;
+}
+
+body.dark-mode #projects h3,
+body.dark-mode #Education h3,
+body.dark-mode #Experience h3 {
+    color: #5eead4;
+}
+
+body.dark-mode #Education p,
+body.dark-mode #Experience p,
+body.dark-mode #Education small,
+body.dark-mode #Experience small {
+    color: #e2e8f0;
+}
+
+body.dark-mode .skill-box {
+    background-color: #27272a;
+    color: #f8fafc;
+    border-color: #475569;
+}
+
+body.dark-mode .skill-box legend {
+    background-color: #0f766e;
+    color: #ffffff;
+}
+
+body.dark-mode .skill-tags span {
+    background-color: #134e4a;
+    color: #ccfbf1;
+    border-color: #2dd4bf;
+}
+
+body.dark-mode .skill-tags span:hover {
+    background-color: #115e59;
+}
+
+body.dark-mode #contact {
+    background-color: #134e4a;
+    color: #ffffff;
+}
+
+body.dark-mode #contact h2,
+body.dark-mode #contact p {
+    color: #ffffff;
+}
+
+body.dark-mode form {
+    background-color: #27272a;
+    color: #f8fafc;
+    border-color: #475569;
+}
+
+body.dark-mode form fieldset {
+    border-color: #64748b;
+}
+
+body.dark-mode form legend {
+    color: #5eead4;
+}
+
+body.dark-mode form label {
+    color: #f8fafc;
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+    background-color: #18181b;
+    color: #ffffff;
+    border-color: #64748b;
+}
+
+body.dark-mode form input::placeholder,
+body.dark-mode form textarea::placeholder {
+    color: #cbd5e1;
+}
+
+body.dark-mode #Education hr,
+body.dark-mode #Experience hr,
+body.dark-mode hr {
+    border-top-color: #475569;
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    #home p {
+        max-width: 95%;
+    }
+
+    nav {
+        justify-content: center;
+    }
+}
+
+#mobile-menu-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #mobile-menu-toggle {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #0f766e;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    nav#port-nav {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        padding: 10px 0;
+        gap: 8px;
+    }
+
+    nav#port-nav.open {
+        display: flex;
+    }
+
+    nav#port-nav a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}
