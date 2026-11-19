@@ -18,7 +18,7 @@ const projects = [
   {
     title: "FoodHub - Food Ordering Application",
     description:
-      "A food ordering application with backend APIs for managing products, searching food items, stock availability and order-related operations.",
+      "A food application with backend APIs for managing products, searching items, checking stock availability and performing product operations.",
     category: "Full Stack Development",
     technologies: [
       "Node.js",
@@ -45,16 +45,50 @@ const projects = [
     featured: true,
   },
   {
+    title: "Serverless Media Upload Hub",
+    description:
+      "A serverless cloud application for handling media uploads using AWS services, with S3 for storage, Lambda for serverless processing and DynamoDB for data management.",
+    category: "AWS Cloud & Serverless",
+    technologies: [
+      "AWS S3",
+      "AWS Lambda",
+      "DynamoDB",
+      "AWS IAM",
+      "Serverless Architecture",
+    ],
+    github:
+      "https://github.com/Dhanrajdk79/Serverless-Media-Upload-Hub-AWS-Lambda-with-S3-and-DynamoDB-",
+    featured: true,
+  },
+  {
+    title: "E-Commerce CI/CD Deployment",
+    description:
+      "A DevOps deployment project focused on automating application delivery using Jenkins pipelines, Docker containers, Terraform infrastructure provisioning and AWS EC2.",
+    category: "DevOps & Cloud Engineering",
+    technologies: [
+      "Docker",
+      "Jenkins",
+      "Terraform",
+      "AWS EC2",
+      "Nginx",
+      "CI/CD",
+    ],
+    github:
+      "https://github.com/Dhanrajdk79/E-commerce-website-deployment-using-jenkinsCICD-Terraform",
+    featured: true,
+  },
+  {
     title: "Expense Tracker",
     description:
-      "An expense tracking application designed to help users record, organize and monitor their expenses through a simple and user-friendly interface.",
+      "An expense tracking application designed to help users record, organize and monitor expenses through a simple and user-friendly interface.",
     category: "Frontend Development",
     technologies: [
       "HTML",
       "CSS",
       "JavaScript",
     ],
-    github: "https://github.com/Dhanrajdk79/expense-tracker",
+    github:
+      "https://github.com/Dhanrajdk79/expense-tracker",
   },
 ];
 
@@ -65,8 +99,8 @@ function Projects() {
         <span>MY RECENT WORK</span>
         <h2>Featured Projects</h2>
         <p>
-          Real-world applications showcasing my skills
-          in full-stack development and web technologies.
+          Real-world applications showcasing my experience
+          in full-stack development, AWS cloud and DevOps.
         </p>
       </div>
 
