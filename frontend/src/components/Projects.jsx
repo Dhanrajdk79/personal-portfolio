@@ -3,7 +3,7 @@ const projects = [
   {
     title: "Client & Project Management System",
     description:
-      "Full-stack project management application for managing clients, projects, employees, tasks, comments and project progress.",
+      "A full-stack project management platform to manage clients, projects, employees, tasks, comments and project progress. Includes role-based access for administrators, project managers, employees and clients.",
     category: "Full Stack Development",
     technologies: [
       "React.js",
@@ -12,13 +12,28 @@ const projects = [
       "MySQL",
       "JWT",
     ],
-    github: "",
+    github: "https://github.com/Dhanrajdk79/cpms",
     featured: true,
   },
   {
-    title: "Morya Wellness Center Website",
+    title: "FoodHub - Food Ordering Application",
     description:
-      "Responsive website for a wellness and fitness center with service information and business-focused design.",
+      "A food ordering application with backend APIs for managing products, searching food items, stock availability and order-related operations.",
+    category: "Full Stack Development",
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "SQLite",
+      "JavaScript",
+      "REST API",
+    ],
+    github: "https://github.com/Dhanrajdk79/FoodHub",
+    featured: true,
+  },
+  {
+    title: "Morya Wellness Center",
+    description:
+      "A responsive business website for a wellness and fitness center, presenting services, wellness programs and business information through a clean user interface.",
     category: "Web Development",
     technologies: [
       "HTML",
@@ -26,64 +41,20 @@ const projects = [
       "JavaScript",
     ],
     github:
-      "https://github.com/Dhanrajdk79/morya_wellness-center",
+      "https://github.com/Dhanrajdk79/morya-wellness-center",
+    featured: true,
   },
   {
-    title: "Clothing E-Commerce Website",
+    title: "Expense Tracker",
     description:
-      "Responsive clothing website deployed using a three-tier architecture with AWS EC2, RDS and VPC.",
-    category: "AWS Cloud",
+      "An expense tracking application designed to help users record, organize and monitor their expenses through a simple and user-friendly interface.",
+    category: "Frontend Development",
     technologies: [
-      "AWS EC2",
-      "RDS",
-      "VPC",
-      "Web Development",
+      "HTML",
+      "CSS",
+      "JavaScript",
     ],
-    github:
-      "https://github.com/Dhanrajdk79/clothing-website-using-3-tier-architecture-",
-  },
-  {
-    title: "Serverless Media Upload Hub",
-    description:
-      "Serverless media upload application using AWS S3, Lambda and DynamoDB.",
-    category: "Serverless",
-    technologies: [
-      "AWS S3",
-      "Lambda",
-      "DynamoDB",
-    ],
-    github:
-      "https://github.com/Dhanrajdk79/Serverless-Media-Upload-Hub-AWS-Lambda-with-S3-and-DynamoDB-",
-  },
-  {
-    title: "Three-Tier E-Commerce Infrastructure",
-    description:
-      "AWS infrastructure provisioned using Terraform, including VPC, subnets, EC2, ALB, Auto Scaling and RDS.",
-    category: "Infrastructure as Code",
-    technologies: [
-      "AWS",
-      "Terraform",
-      "EC2",
-      "RDS",
-      "ALB",
-    ],
-    github:
-      "https://github.com/Dhanrajdk79/3Tier_Ecommerce_Terraform",
-  },
-  {
-    title: "E-Commerce CI/CD Deployment",
-    description:
-      "Automated application deployment using Jenkins CI/CD, Terraform, Docker, AWS EC2 and Nginx.",
-    category: "DevOps",
-    technologies: [
-      "Jenkins",
-      "Terraform",
-      "Docker",
-      "AWS EC2",
-      "Nginx",
-    ],
-    github:
-      "https://github.com/Dhanrajdk79/E-commerce-website-deployment-using-jenkinsCICD-Terraform",
+    github: "https://github.com/Dhanrajdk79/expense-tracker",
   },
 ];
 
@@ -93,7 +64,10 @@ function Projects() {
       <div className="section-heading">
         <span>MY RECENT WORK</span>
         <h2>Featured Projects</h2>
-        <p>Some projects I have built and worked on.</p>
+        <p>
+          Real-world applications showcasing my skills
+          in full-stack development and web technologies.
+        </p>
       </div>
 
       <div className="projects-grid">
@@ -103,7 +77,7 @@ function Projects() {
             key={project.title}
           >
             <div className="project-number">
-              PROJECT 0{index + 1}
+              PROJECT {String(index + 1).padStart(2, "0")}
             </div>
 
             {project.featured && (
@@ -127,19 +101,13 @@ function Projects() {
             </div>
 
             <div className="project-links">
-              {project.github ? (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View on GitHub ↗
-                </a>
-              ) : (
-                <span className="project-link-pending">
-                  GitHub link to be added
-                </span>
-              )}
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on GitHub ↗
+              </a>
             </div>
           </article>
         ))}
