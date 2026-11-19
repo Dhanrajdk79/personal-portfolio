@@ -1,23 +1,20 @@
 
+import profileImage from "../assets/profile.png";
+
 function Hero() {
   const resumeLink = "YOUR_GOOGLE_DRIVE_RESUME_LINK";
 
   return (
     <section id="home" className="hero">
       <div className="hero-container">
-
         <div className="hero-content">
-          <p className="hero-greeting">
-            HELLO, I'M
-          </p>
+          <p className="hero-greeting">HELLO, I'M</p>
 
           <h1>
             Dhanraj <span>Kshirsagar</span>
           </h1>
 
-          <h2>
-            AWS & DevOps Engineer
-          </h2>
+          <h2>AWS & DevOps Engineer</h2>
 
           <p className="hero-description">
             I build, automate and deploy scalable cloud
@@ -63,7 +60,7 @@ function Hero() {
         <div className="hero-image">
           <div className="profile-glow">
             <img
-              src="/src/assets/profile.png"
+              src={profileImage}
               alt="Dhanraj Kshirsagar"
               className="profile-photo"
             />
@@ -73,7 +70,6 @@ function Hero() {
             Building • Learning • Deploying
           </p>
         </div>
-
       </div>
     </section>
   );
