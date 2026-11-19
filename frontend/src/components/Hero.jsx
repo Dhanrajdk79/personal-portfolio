@@ -2,7 +2,7 @@
 import profileImage from "../assets/profile.png";
 
 function Hero() {
-  const resumeLink = "YOUR_GOOGLE_DRIVE_RESUME_LINK";
+  const resumeLink = "https://drive.google.com/file/d/1051xkCVOfE4u7RMTV0l0C2gqfyCMBUmq/view?usp=sharing";
 
   return (
     <section id="home" className="hero">
