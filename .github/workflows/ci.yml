@@ -1,0 +1,107 @@
+name: Portfolio CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - feature/ai-portfolio
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  frontend-ci:
+    name: Frontend CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Run frontend lint
+        working-directory: frontend
+        run: npm run lint
+
+      - name: Build frontend
+        working-directory: frontend
+        env:
+          VITE_API_BASE_URL: https://dhanraj-portfolio-api-ppxc.onrender.com
+        run: npm run build
+
+      - name: Configure GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          name: github-pages
+          path: frontend/dist
+
+  backend-ci:
+    name: Backend CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install backend dependencies
+        working-directory: backend
+        run: npm ci
+
+      - name: Check backend syntax
+        working-directory: backend
+        run: |
+          node --check server.js
+          node --check app.js
+          node --check routes/contactRoutes.js
+
+      - name: Run backend tests with coverage
+        working-directory: backend
+        run: npm run test:coverage
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs:
+      - frontend-ci
+      - backend-ci
+
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
