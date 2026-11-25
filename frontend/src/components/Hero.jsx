@@ -2,7 +2,7 @@
 import profileImage from "../assets/profile.png";
 
 function Hero() {
-  const resumeLink = "https://drive.google.com/file/d/1051xkCVOfE4u7RMTV0l0C2gqfyCMBUmq/view?usp=sharing";
+  const resumeLink = "https://drive.google.com/file/d/1Wx7B_eZf-PS46eyjfrOWk--Oqk_mizA1/view?usp=drive_link";
 
   return (
     <section id="home" className="hero">
