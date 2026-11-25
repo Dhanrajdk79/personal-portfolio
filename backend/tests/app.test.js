@@ -3,6 +3,8 @@ const { test, describe } = require("node:test");
 const assert = require("node:assert/strict");
 const request = require("supertest");
 
+process.env.GOOGLE_SCRIPT_URL = "https://example.test/google-script";
+
 const app = require("../app");
 
 // ==================================================
