@@ -10,6 +10,7 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import AIAssistant from "./components/AIAssistant";
 
 import "./App.css";
 
@@ -30,7 +31,9 @@ function App() {
       </main>
 
       <Footer />
+
       <WhatsAppButton />
+      <AIAssistant />
     </>
   );
 }

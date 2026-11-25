@@ -1,10 +1,11 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
 const express = require("express");
 const cors = require("cors");
-const dotenv = require("dotenv");
 
+const aiRoutes = require("./routes/aiRoutes");
 const contactRoutes = require("./routes/contactRoutes");
-
-dotenv.config();
 
 const app = express();
 
@@ -44,6 +45,7 @@ app.get("/api/health", (req, res) => {
 
 // Contact API
 app.use("/api/contact", contactRoutes);
+app.use("/api/ai", aiRoutes);
 
 // 404 handler
 app.use((req, res) => {
