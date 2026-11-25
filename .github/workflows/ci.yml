@@ -1,3 +1,4 @@
+
 name: Portfolio CI
 
 on:
@@ -63,6 +64,6 @@ jobs:
           node --check app.js
           node --check routes/contactRoutes.js
 
-      - name: Run backend tests
+      - name: Run backend tests with coverage
         working-directory: backend
-        run: npm test
+        run: npm run test:coverage
