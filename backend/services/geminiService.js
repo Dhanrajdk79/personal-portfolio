@@ -141,10 +141,11 @@ Every answer should be helpful, relevant, clear, accurate, and professional, lea
 `;
 
 
-async function generateAIResponse(message) {
-  const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY,
-  });
+async function generateAIResponse(
+  message,
+  ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY }),
+  wait = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+) {
 
   const maxRetries = 3;
 
@@ -158,13 +159,14 @@ async function generateAIResponse(message) {
         },
       });
 
-const reply = response.text;
+      const reply = response.text;
 
-if (!reply || !reply.trim()) {
-  throw new Error("Gemini returned an empty response.");
-}
+      if (!reply || !reply.trim()) {
+        throw new Error("Gemini returned an empty response.");
+      }
 
-return reply.trim();    } catch (error) {
+      return reply.trim();
+    } catch (error) {
       const errorMessage = error.message || "";
 
       const isTemporaryError =
@@ -184,7 +186,7 @@ return reply.trim();    } catch (error) {
 
       const delay = attempt * 2000;
 
-      await new Promise((resolve) => setTimeout(resolve, delay));
+      await wait(delay);
     }
   }
 }
